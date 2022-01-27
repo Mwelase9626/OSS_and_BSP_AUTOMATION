@@ -10,133 +10,136 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class BSP_Registration_data  {
-public static XSSFWorkbook BSP_workbook_test_data;
-public static XSSFSheet sheet_test_data;
+public class BSP_Registration_data {
+    public static XSSFWorkbook BSP_workbook_test_data;
+    public static XSSFSheet sheet_test_data;
 
-       public String bsp_name() {
 
-           try {
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
+        public String bsp_name(){
 
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
+            try {
 
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell Name = null;
-                    if (Status_Value.equals("")) {
-                    Name = row.getCell(0);
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
+
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
+
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getRawValue();
+                    XSSFCell Name;
+                    if (status == null) {
+                        Name = row.getCell(0);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return Name.getStringCellValue();
+                        return Name.getStringCellValue();
 
 
                     }
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-} catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-           return null;
-       }
 
-    public String surname() {
+        public String surname() {
 
-        try {
+            try {
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell Surname = null;
-                if (Status_Value.equals("")) {
-                    Surname = row.getCell(1);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell Surname;
+                    if (status == null) {
+                        Surname = row.getCell(1);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return Surname.getStringCellValue();
+                        return Surname.getStringCellValue();
 
 
+                    }
                 }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
-    }
 
-    public String bsp_IDnumber() {
+        public String bsp_IDnumber() {
 
-        try {
+            try {
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell IDnumber = null;
-                if (Status_Value.equals("")) {
-                    IDnumber = row.getCell(2);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell IDnumber;
+                    if (status == null) {
+                        IDnumber = row.getCell(2);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return IDnumber.getStringCellValue();
+                        return IDnumber.getStringCellValue();
 
 
+                    }
                 }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
-    }
 
-    public String bsp_username() {
+        public String bsp_username() {
 
-        try {
+            try {
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell username = null;
-                if (Status_Value.equals("")) {
-                    username = row.getCell(3);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell username;
+                    if (status == null) {
+                        username = row.getCell(3);
 
 
 //                    XSSFCell create_status = row.createCell(15);
@@ -145,450 +148,449 @@ public static XSSFSheet sheet_test_data;
 
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return username.getStringCellValue();
+                        return username.getStringCellValue();
 
 
+                    }
                 }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
-    }
 
-    public String bsp_PrimaryEmail() {
+        public String bsp_PrimaryEmail() {
 
-        try {
+            try {
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell primaryEmail = null;
-                if (Status_Value.equals("")) {
-                    primaryEmail = row.getCell(4);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell primaryEmail;
+                    if (status == null) {
+                        primaryEmail = row.getCell(4);
 
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return primaryEmail.getStringCellValue();
+                        return primaryEmail.getStringCellValue();
 
 
+                    }
                 }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
 
+        public String bsp_SecondaryEmail() {
 
-        return null;
-    }
+            try {
 
-    public String bsp_SecondaryEmail() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell SecondaryEmail = null;
-                if (Status_Value.equals("")) {
-                    SecondaryEmail = row.getCell(5);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell SecondaryEmail;
+                    if (status == null) {
+                        SecondaryEmail = row.getCell(5);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return SecondaryEmail.getStringCellValue();
+                        return SecondaryEmail.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Password() {
 
+            try {
 
-        return null;
-    }
-    public String bsp_Password() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell Password = null;
-                if (Status_Value.equals("")) {
-                    Password = row.getCell(6);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell Password;
+                    if (status == null) {
+                        Password = row.getCell(6);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return Password.getStringCellValue();
+                        return Password.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
 
+        public String bsp_ConfirmPassword() {
 
-        return null;
-    }
+            try {
 
-    public String bsp_ConfirmPassword() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell ConfirmPassword = null;
-                if (Status_Value.equals("")) {
-                    ConfirmPassword = row.getCell(7);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell ConfirmPassword;
+                    if (status == null) {
+                        ConfirmPassword = row.getCell(7);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return ConfirmPassword.getStringCellValue();
+                        return ConfirmPassword.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Primary_Contact_Number() {
 
+            try {
 
-        return null;
-    }
-    public String bsp_Primary_Contact_Number() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell PrimaryContactNumber = null;
-                if (Status_Value.equals("")) {
-                    PrimaryContactNumber = row.getCell(8);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell PrimaryContactNumber;
+                    if (status == null) {
+                        PrimaryContactNumber = row.getCell(8);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return PrimaryContactNumber.getStringCellValue();
+                        return PrimaryContactNumber.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
 
+        public String bsp_Secondary_Contact_Number() {
 
-        return null;
-    }
+            try {
 
-    public String bsp_Secondary_Contact_Number() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell SecondaryContactNumber = null;
-                if (Status_Value.equals("")) {
-                    SecondaryContactNumber = row.getCell(9);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell SecondaryContactNumber;
+                    if (status == null) {
+                        SecondaryContactNumber = row.getCell(9);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return SecondaryContactNumber.getStringCellValue();
+                        return SecondaryContactNumber.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Town_or_City() {
 
+            try {
 
-        return null;
-    }
-    public String bsp_Town_or_City() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell bsp_Town_or_City = null;
-                if (Status_Value.equals("")) {
-                    bsp_Town_or_City = row.getCell(10);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell bsp_Town_or_City;
+                    if (status == null) {
+                        bsp_Town_or_City = row.getCell(10);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return bsp_Town_or_City.getStringCellValue();
+                        return bsp_Town_or_City.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Municipality() {
 
+            try {
 
-        return null;
-    }
-    public String bsp_Municipality() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell bsp_Municipality = null;
-                if (Status_Value.equals("")) {
-                    bsp_Municipality = row.getCell(11);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell bsp_Municipality;
+                    if (status == null) {
+                        bsp_Municipality = row.getCell(11);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return bsp_Municipality.getStringCellValue();
+                        return bsp_Municipality.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Ward_Number() {
 
+            try {
 
-        return null;
-    }
-    public String bsp_Ward_Number() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell bsp_Ward_Number = null;
-                if (Status_Value.equals("")) {
-                    bsp_Ward_Number = row.getCell(12);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell bsp_Ward_Number;
+                    if (status == null) {
+                        bsp_Ward_Number = row.getCell(12);
 //                    XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return bsp_Ward_Number.getStringCellValue();
+                        return bsp_Ward_Number.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
 
+        public String bsp_Religion() {
 
-        return null;
-    }
+            try {
 
-    public String bsp_Religion() {
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
 
-        try {
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
 
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell bsp_Religion = null;
-                if (Status_Value.equals("")) {
-                    bsp_Religion = row.getCell(13);
-                    XSSFCell create_status = row.createCell(15);
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell bsp_Religion;
+                    if (status == null) {
+                        bsp_Religion = row.getCell(13);
+                        XSSFCell create_status = row.createCell(15);
 //                    create_status.setCellValue("used");
 //
 //                    FileOutputStream fos = new FileOutputStream(document_path);
 //                    BSP_workbook_test_data.write(fos);
-                    return bsp_Religion.getStringCellValue();
+                        return bsp_Religion.getStringCellValue();
+
+
+                    }
+
 
 
                 }
 
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
+        public String bsp_Dietary() {
+
+            try {
+
+                String document_path = "C:\\Users\\madoda\\Music\\BSP_Student_Profile_ datas.xlsx";
+
+                FileInputStream fs = new FileInputStream(document_path);
+                XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
+                XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
+                int lastrow = sheetname.getLastRowNum();
+
+                for (int i = 1; i <= lastrow; i++) {
+                    XSSFRow row = sheetname.getRow(i);
+                    XSSFCell status = row.getCell(15);
+//                    String Status_Value = status.getStringCellValue();
+                    XSSFCell bsp_Dietary;
+                    if (status == null) {
+                        bsp_Dietary = row.getCell(14);
+                        XSSFCell create_status = row.createCell(15);
+                        create_status.setCellValue("used");
+
+                        FileOutputStream fos = new FileOutputStream(document_path);
+                        BSP_workbook_test_data.write(fos);
+                        return bsp_Dietary.getStringCellValue();
 
 
-        return null;
-    }
-    public String bsp_Dietary() {
+                    }
 
-        try {
-
-            String document_path = "C:\\Users\\madoda\\OneDrive - FUNDI\\BSP_Student_Profile_ data..xlsx";
-
-            FileInputStream fs = new FileInputStream(document_path);
-            XSSFWorkbook  BSP_workbook_test_data = new XSSFWorkbook(fs);
-            XSSFSheet sheetname = BSP_workbook_test_data .getSheet("Registration_Data");
-            int lastrow = sheetname.getLastRowNum();
-
-            for (int i = 1; i <= lastrow; i++) {
-                XSSFRow row = sheetname.getRow(i);
-                XSSFCell status = row.getCell(15);
-                String Status_Value = status.getStringCellValue();
-                XSSFCell bsp_Dietary = null;
-                if (Status_Value.equals("")) {
-                    bsp_Dietary = row.getCell(14);
-                    XSSFCell create_status = row.createCell(15);
-                    create_status.setCellValue("used");
-
-                    FileOutputStream fos = new FileOutputStream(document_path);
-                    BSP_workbook_test_data.write(fos);
-                    return bsp_Dietary.getStringCellValue();
 
 
                 }
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            return null;
         }
-
-
-        return null;
     }
-}
-
-
-
 
 
